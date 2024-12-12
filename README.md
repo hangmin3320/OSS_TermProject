@@ -1,1 +1,22 @@
-# OpenSourceSoftware TermProject
+# OSS Term Project
+
+## 개요 - 쓰레기 분류 인공지능 모델
+이 프로젝트는 PyTorch를 활용하여 쓰레기 분류를 수행하는 인공지능 모델을 개발하는 데 중점을 둡니다.  
+Kaggle에서 제공된 6종류의 쓰레기 데이터(일반 쓰레기, 플라스틱, 종이, 철, 유리, 박스)를 사용하여 모델을 학습시켰으며, 클래스당 약 400~500개의 데이터를 포함하고 있습니다.
+
+## 주요 파일
+- `main.py`: 분류 모델을 실행하는 주요 코드.
+- `trainModel.ipynb`: 데이터 전처리, 모델 훈련 및 분석을 위한 Jupyter Notebook.
+- `dataset/`: 훈련 및 테스트용 데이터셋 저장 디렉토리.
+- `result/`: 훈련 결과 및 모델 출력물 저장 디렉토리.
+- `test.jpeg`: 테스트용 샘플 이미지 파일.
+
+## 모델 설명
+- **모델 구조**: Vision Task에서 널리 사용되는 **ResNet** 구조를 채택했습니다.  
+- **사전 학습 모델 활용**: 효율적인 학습을 위해 **Pre-trained ResNet50 모델**을 가져와 Fine-Tuning을 수행했습니다.
+
+## 사용 방법
+1. 분류할 이미지 파일 경로를 `main.py`의 `IMAGE_PATH` 변수에 설정합니다.
+2. 다음 명령어를 실행하여 예측 결과를 확인합니다:
+   ```bash
+   python main.py
